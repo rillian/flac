@@ -144,13 +144,6 @@ jobs:
           make
           make check
 
-      - name: Prepare CMake build directory
-        if: startsWith(matrix.build-system,'cmake')
-        env:
-          CC: ${{ matrix.cc }}
-          CXX: ${{ matrix.cxx }}
-        run: mkdir cmake-build
-
       - name: CMake generator
         if: startsWith(matrix.build-system,'cmake')
         env:
